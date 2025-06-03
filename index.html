@@ -249,6 +249,12 @@
             height: 250px;
             object-fit: cover;
             transition: all 0.3s ease;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+        }
+
+        .photo-item img[src*="picsum"] {
+            border: none;
+            filter: sepia(20%) hue-rotate(30deg) brightness(0.9);
         }
 
         .photo-caption {
@@ -262,9 +268,8 @@
             font-size: 0.95em;
             text-align: center;
             opacity: 0;
-            transition: opacity 0.3s ease;
-            transform: translateY(100%);
             transition: all 0.3s ease;
+            transform: translateY(100%);
         }
 
         .photo-item:hover .photo-caption {
@@ -284,6 +289,20 @@
             font-weight: bold;
         }
 
+        /* プレースホルダー画像のスタイル */
+        .placeholder-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1em;
+            text-align: center;
+            font-weight: bold;
+        }
+
         /* ライトボックス */
         .lightbox {
             position: fixed;
@@ -299,10 +318,12 @@
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.3s ease;
+            visibility: hidden;
         }
 
         .lightbox.active {
             opacity: 1;
+            visibility: visible;
         }
 
         .lightbox img {
@@ -548,59 +569,59 @@
                         <h3 class="gallery-title">🏜️ 砂漠の風景と探検の軌跡</h3>
                         <div class="photo-grid">
                             <!-- 2003年の写真 -->
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=1')">
                                 <span class="photo-year">2003</span>
-                                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80" alt="タクラマカン砂漠入口">
+                                <img src="https://picsum.photos/400/250?random=1" alt="タクラマカン砂漠入口">
                                 <div class="photo-caption">タクラマカン砂漠への入口地点</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=2')">
                                 <span class="photo-year">2003</span>
-                                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="砂丘の連なり">
+                                <img src="https://picsum.photos/400/250?random=2" alt="砂丘の連なり">
                                 <div class="photo-caption">果てしなく続く砂丘の連なり</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=3')">
                                 <span class="photo-year">2003</span>
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="砂漠の朝日">
+                                <img src="https://picsum.photos/400/250?random=3" alt="砂漠の朝日">
                                 <div class="photo-caption">砂漠に昇る神秘的な朝日</div>
                             </div>
 
                             <!-- 2004年の写真 -->
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1544550285-f813152fb2fd?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=4')">
                                 <span class="photo-year">2004</span>
-                                <img src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?w=400&q=80" alt="キャラバン隊">
+                                <img src="https://picsum.photos/400/250?random=4" alt="キャラバン隊">
                                 <div class="photo-caption">ラクダキャラバン隊の行進</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=5')">
                                 <span class="photo-year">2004</span>
-                                <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=400&q=80" alt="砂丘の模様">
+                                <img src="https://picsum.photos/400/250?random=5" alt="砂丘の模様">
                                 <div class="photo-caption">風が刻んだ美しい砂丘の模様</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=6')">
                                 <span class="photo-year">2004</span>
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="砂漠の夕日">
+                                <img src="https://picsum.photos/400/250?random=6" alt="砂漠の夕日">
                                 <div class="photo-caption">タクラマカンに沈む雄大な夕日</div>
                             </div>
 
                             <!-- 追加の探検写真 -->
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=7')">
                                 <span class="photo-year">2003</span>
-                                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80" alt="探検装備">
+                                <img src="https://picsum.photos/400/250?random=7" alt="探検装備">
                                 <div class="photo-caption">過酷な砂漠に挑む探検装備</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=8')">
                                 <span class="photo-year">2004</span>
-                                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="砂嵐">
+                                <img src="https://picsum.photos/400/250?random=8" alt="砂嵐">
                                 <div class="photo-caption">砂漠特有の激しい砂嵐</div>
                             </div>
 
-                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')">
+                            <div class="photo-item" onclick="openLightbox('https://picsum.photos/800/600?random=9')">
                                 <span class="photo-year">2004</span>
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="オアシス">
+                                <img src="https://picsum.photos/400/250?random=9" alt="オアシス">
                                 <div class="photo-caption">砂漠に点在する貴重なオアシス</div>
                             </div>
                         </div>
@@ -668,7 +689,22 @@
             });
         });
 
-        // 写真の遅延読み込み
+        // 画像読み込みエラー時のフォールバック
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.background = 'linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%)';
+                this.style.display = 'flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.style.color = 'white';
+                this.style.fontSize = '1em';
+                this.style.fontWeight = 'bold';
+                this.innerHTML = '砂漠の風景<br>(写真準備中)';
+                this.style.textAlign = 'center';
+            });
+        });
+
+        // 画像遅延読み込み
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px 50px 0px'
