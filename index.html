@@ -228,7 +228,6 @@
             margin-bottom: 30px;
         }
 
-        /* 写真カード - 完全にCSS背景で作成 */
         .photo-item {
             position: relative;
             border-radius: 15px;
@@ -236,15 +235,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.4s ease;
             cursor: pointer;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: white;
         }
 
         .photo-item:hover {
@@ -253,16 +244,12 @@
             z-index: 10;
         }
 
-        /* 各写真の背景グラデーション */
-        .photo-1 { background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); }
-        .photo-2 { background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%); }
-        .photo-3 { background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%); }
-        .photo-4 { background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%); }
-        .photo-5 { background: linear-gradient(135deg, #DEB887 0%, #D2B48C 100%); }
-        .photo-6 { background: linear-gradient(135deg, #F4A460 0%, #D2691E 100%); }
-        .photo-7 { background: linear-gradient(135deg, #BC8F8F 0%, #A0522D 100%); }
-        .photo-8 { background: linear-gradient(135deg, #D2B48C 0%, #BC8F8F 100%); }
-        .photo-9 { background: linear-gradient(135deg, #228B22 0%, #32CD32 100%); }
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
 
         .photo-caption {
             position: absolute;
@@ -319,25 +306,16 @@
             visibility: visible;
         }
 
-        .lightbox-content {
+        .lightbox img {
             max-width: 90%;
             max-height: 90%;
             border-radius: 10px;
             box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
             transform: scale(0.8);
             transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            min-width: 600px;
-            color: white;
-            font-size: 2em;
-            text-align: center;
-            border: 3px solid white;
         }
 
-        .lightbox.active .lightbox-content {
+        .lightbox.active img {
             transform: scale(1);
         }
 
@@ -413,12 +391,6 @@
                 width: 45px;
                 height: 45px;
             }
-
-            .lightbox-content {
-                min-width: 90%;
-                min-height: 300px;
-                font-size: 1.5em;
-            }
         }
 
         @media (max-width: 480px) {
@@ -430,9 +402,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .photo-item {
+            .photo-item img {
                 height: 200px;
-                font-size: 1em;
             }
         }
 
@@ -578,59 +549,59 @@
                         <h3 class="gallery-title">🏜️ 砂漠の風景と探検の軌跡</h3>
                         <div class="photo-grid">
                             <!-- 2003年の写真 -->
-                            <div class="photo-item photo-1" onclick="openLightbox('砂漠への入口地点', 'photo-1')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80')">
                                 <span class="photo-year">2003</span>
-                                <div>🏜️<br>砂漠入口</div>
+                                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80" alt="タクラマカン砂漠入口" onerror="handleImageError(this, '🏜️ 砂漠入口')">
                                 <div class="photo-caption">タクラマカン砂漠への入口地点</div>
                             </div>
 
-                            <div class="photo-item photo-2" onclick="openLightbox('果てしなく続く砂丘の連なり', 'photo-2')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80')">
                                 <span class="photo-year">2003</span>
-                                <div>🏔️<br>砂丘連なり</div>
+                                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="砂丘の連なり" onerror="handleImageError(this, '🏔️ 砂丘連なり')">
                                 <div class="photo-caption">果てしなく続く砂丘の連なり</div>
                             </div>
 
-                            <div class="photo-item photo-3" onclick="openLightbox('砂漠に昇る神秘的な朝日', 'photo-3')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')">
                                 <span class="photo-year">2003</span>
-                                <div>🌅<br>神秘的な朝日</div>
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="砂漠の朝日" onerror="handleImageError(this, '🌅 朝日')">
                                 <div class="photo-caption">砂漠に昇る神秘的な朝日</div>
                             </div>
 
                             <!-- 2004年の写真 -->
-                            <div class="photo-item photo-4" onclick="openLightbox('ラクダキャラバン隊の行進', 'photo-4')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1544550285-f813152fb2fd?w=800&q=80')">
                                 <span class="photo-year">2004</span>
-                                <div>🐪<br>キャラバン隊</div>
+                                <img src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?w=400&q=80" alt="キャラバン隊" onerror="handleImageError(this, '🐪 キャラバン')">
                                 <div class="photo-caption">ラクダキャラバン隊の行進</div>
                             </div>
 
-                            <div class="photo-item photo-5" onclick="openLightbox('風が刻んだ美しい砂丘の模様', 'photo-5')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=800&q=80')">
                                 <span class="photo-year">2004</span>
-                                <div>🌊<br>砂丘の模様</div>
+                                <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=400&q=80" alt="砂丘の模様" onerror="handleImageError(this, '🌊 砂丘模様')">
                                 <div class="photo-caption">風が刻んだ美しい砂丘の模様</div>
                             </div>
 
-                            <div class="photo-item photo-6" onclick="openLightbox('タクラマカンに沈む雄大な夕日', 'photo-6')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')">
                                 <span class="photo-year">2004</span>
-                                <div>🌇<br>雄大な夕日</div>
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="砂漠の夕日" onerror="handleImageError(this, '🌇 夕日')">
                                 <div class="photo-caption">タクラマカンに沈む雄大な夕日</div>
                             </div>
 
                             <!-- 追加の探検写真 -->
-                            <div class="photo-item photo-7" onclick="openLightbox('過酷な砂漠に挑む探検装備', 'photo-7')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')">
                                 <span class="photo-year">2003</span>
-                                <div>🎒<br>探検装備</div>
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="探検装備" onerror="handleImageError(this, '🎒 探検装備')">
                                 <div class="photo-caption">過酷な砂漠に挑む探検装備</div>
                             </div>
 
-                            <div class="photo-item photo-8" onclick="openLightbox('砂漠特有の激しい砂嵐', 'photo-8')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80')">
                                 <span class="photo-year">2004</span>
-                                <div>💨<br>激しい砂嵐</div>
+                                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="砂嵐" onerror="handleImageError(this, '💨 砂嵐')">
                                 <div class="photo-caption">砂漠特有の激しい砂嵐</div>
                             </div>
 
-                            <div class="photo-item photo-9" onclick="openLightbox('砂漠に点在する貴重なオアシス', 'photo-9')">
+                            <div class="photo-item" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80')">
                                 <span class="photo-year">2004</span>
-                                <div>🌴<br>貴重なオアシス</div>
+                                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80" alt="オアシス" onerror="handleImageError(this, '🌴 オアシス')">
                                 <div class="photo-caption">砂漠に点在する貴重なオアシス</div>
                             </div>
                         </div>
@@ -649,4 +620,71 @@
                 2003年-2004年　タクラマカン砂漠探検記録<br>
                 冒険家　成田
             </p>
-        </footer
+        </footer>
+    </div>
+
+    <!-- ライトボックス -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            
+            // スクロール防止
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            
+            // スクロール復元
+            document.body.style.overflow = 'auto';
+        }
+        
+        // 画像読み込みエラー時の代替表示
+        function handleImageError(img, fallbackText) {
+            img.style.display = 'none';
+            img.parentElement.style.background = 'linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%)';
+            img.parentElement.style.display = 'flex';
+            img.parentElement.style.alignItems = 'center';
+            img.parentElement.style.justifyContent = 'center';
+            img.parentElement.style.color = 'white';
+            img.parentElement.style.fontSize = '1.2em';
+            img.parentElement.style.fontWeight = 'bold';
+            img.parentElement.innerHTML = `
+                <span class="photo-year">${img.parentElement.querySelector('.photo-year').textContent}</span>
+                <div>${fallbackText}</div>
+                <div class="photo-caption">${img.parentElement.querySelector('.photo-caption').textContent}</div>
+            `;
+        }
+        
+        // ESCキーでライトボックスを閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
