@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タクラマカン砂漠探検記録 - 成田正次</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #F4A460 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 3px solid #8B4513;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #F4A460, #DEB887);
+            border-radius: 10px;
+            margin: -20px -20px 40px -20px;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #A0522D;
+            font-weight: 600;
+        }
+
+        .expedition-info {
+            background: linear-gradient(135deg, #F5DEB3, #FAEBD7);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border-left: 5px solid #D2691E;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .expedition-title {
+            font-size: 1.5em;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .certificate-section {
+            background: linear-gradient(135deg, #FFF8DC, #F0E68C);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 2px solid #DAA520;
+            text-align: center;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .photo-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            padding: 15px;
+            background: linear-gradient(135deg, #F5DEB3, #FAEBD7);
+            font-size: 0.9em;
+            color: #8B4513;
+            font-weight: 600;
+        }
+
+        .achievement-box {
+            background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+            border: 2px solid #CD853F;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .achievement-box h3 {
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .route-details {
+            background: linear-gradient(135deg, #F0F8FF, #E6F3FF);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4682B4;
+        }
+
+        .partner-info {
+            background: linear-gradient(135deg, #E6FFE6, #F0FFF0);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #228B22;
+        }
+
+        .desert-landscape {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .commemoration {
+            text-align: center;
+            background: linear-gradient(135deg, #FFE4E1, #FFF0F5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #DC143C;
+        }
+
+        .respect-message {
+            font-size: 1.1em;
+            color: #8B0000;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>タクラマカン砂漠探検記録</h1>
+            <div class="subtitle">冒険家 成田正次 - 北緯39度線完全縦断の記録</div>
+        </header>
+
+        <div class="expedition-info">
+            <div class="expedition-title">🏜️ 歴史的快挙：タクラマカン砂漠北緯39度線完全縦断</div>
+            <p><strong>探検実施:</strong> 2003年・2004年（2回実施）</p>
+            <p><strong>探検責任者:</strong> 成田正次（日本）</p>
+            <p><strong>中国側協力:</strong> 中青旅新疆国際旅行社有限公司（CYTS）</p>
+            <p><strong>特記事項:</strong> 今世紀初のタクラマカン砂漠横断探検として、エリザベス女王2世より祝電を受領</p>
+        </div>
+
+        <div class="certificate-section">
+            <h2>📜 新疆ウイグル自治区政府公式認定証</h2>
+            <div class="achievement-box">
+                <h3>2004年探検成果</h3>
+                <p><strong>期間:</strong> 2004年1月23日～4月5日（74日間）</p>
+                <p><strong>総距離:</strong> 1,816km（うち砂漠移動距離: 1,816km）</p>
+                <p><strong>砂漠移動日数:</strong> 56日</p>
+                <p><strong>成果:</strong> 全行程を徒歩で横断した初の記録として証明</p>
+            </div>
+        </div>
+
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #F4A460, #DEB887); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">🏜️ 探検隊記念撮影</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">CYTS横断幕前での全員集合写真</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    中日沿北緯39度線横穿塔克拉瑪干沙漠探検 - 探検隊全員による記念撮影。CYTS中青旅の横断幕を背景に、花束を持った探検隊メンバーが勇敢な挑戦を記念して撮影。
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #DEB887, #F5DEB3); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">👥 探検隊メンバー</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">花束を持つクローズアップ撮影</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    探検隊メンバーのクローズアップ - 成田様を含む3名が花束を持ち、達成感に満ちた表情で記念撮影。冒険家としての誇りと友情が感じられる貴重な一枚。
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #FFE4B5, #FFEFD5); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">📜 公式認定証</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">新疆政府発行の正式文書</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    新疆ウイグル自治区旅遊局・中青旅新疆国際旅行社公式認定証（2004年4月10日発行）- 成田正次先生のタクラマカン砂漠横断探検北緯39度線の歴史的成果を公式に証明する貴重な文書。
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #E6F3FF, #F0F8FF); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">🤝 鄭穂総経理</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">CYTS探検計画共同立案者</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    中青旅新疆国際旅行社 鄭穂総経理との記念写真 - 探検計画の共同立案者として、成田様と共に全計画を立案・実行した重要なパートナー。砂漠移動時の安全確保に万全の準備を担当。
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #F0FFF0, #F5FFFA); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">🌟 王星部長</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">入境旅游中心日本部長</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    中青旅新疆国際旅行社 王星部長 - 入境旅游中心日本部長として探検をサポート。ラクダと共に砂漠で撮影された貴重な写真。日中友好の架け橋として重要な役割を果たした。
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div style="height: 250px; background: linear-gradient(135deg, #F5DEB3, #DEB887); display: flex; align-items: center; justify-content: center; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; color: #8B4513; font-weight: bold; padding: 20px;">
+                        <div style="font-size: 1.2em; margin-bottom: 10px;">🐪 砂漠の絶景</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">ラクダ隊列による物資輸送</div>
+                    </div>
+                </div>
+                <div class="photo-caption">
+                    タクラマカン砂漠の壮大な景観 - 地平線まで続く砂丘と、物資を運ぶラクダの隊列。1,816kmの過酷な旅路を物語る息を呑むような大自然の記録。氷点下20度を超える極寒の中での冒険の証。
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #FFF8DC, #F0E68C); padding: 25px; margin: 30px 0; border-radius: 10px; border: 2px solid #DAA520; text-align: center;">
+            <h3 style="color: #8B4513; margin-bottom: 15px;">📸 写真について</h3>
+            <p style="color: #8B0000; font-weight: 600; margin-bottom: 20px;">
+                これらの貴重な探検記録写真は、成田正次様が2003年・2004年に実施されたタクラマカン砂漠横断探検の歴史的瞬間を捉えたものです。<br>
+                各写真は冒険家としての誇りと、中国側パートナーとの友情、そして過酷な自然への挑戦を物語る貴重な記録となっています。
+            </p>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h4 style="color: #8B4513; margin-bottom: 15px;">🔧 写真の追加方法</h4>
+                <div style="text-align: left; color: #654321;">
+                    <p><strong>方法1: 直接コードに埋め込み</strong></p>
+                    <p style="font-size: 0.9em; margin-bottom: 15px;">• 各写真をbase64形式に変換してHTMLに埋め込む<br>• 最も確実で、サイトと一緒に保存される方法</p>
+                    
+                    <p><strong>方法2: 外部ホスティング利用</strong></p>
+                    <p style="font-size: 0.9em; margin-bottom: 15px;">• 写真をGoogle Drive、Dropboxなどにアップロード<br>• 公開リンクを取得してサイトに組み込み</p>
+                    
+                    <p><strong>方法3: GitHub Pages用画像フォルダ</strong></p>
+                    <p style="font-size: 0.9em;">• GitHubリポジトリにimagesフォルダを作成<br>• 写真をアップロードして相対パスで参照</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #E6FFE6, #F0FFF0); padding: 20px; margin: 30px 0; border-radius: 10px; border-left: 4px solid #228B22;">
+            <h3 style="color: #006400; margin-bottom: 15px;">💡 次のステップ</h3>
+            <p style="color: #2F4F2F;">
+                現在のサイト構造は完成しており、写真を後から簡単に追加できます。<br>
+                成田様との打ち合わせ時に、どの方法で写真を追加するかを決めて、<br>
+                本格的な探検記録サイトとして完成させましょう。
+            </p>
+        </div>
+
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'><defs><linearGradient id='desert' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23F4A460'/><stop offset='50%' style='stop-color:%23DEB887'/><stop offset='100%' style='stop-color:%23D2691E'/></linearGradient></defs><rect width='800' height='400' fill='url(%23desert)'/><text x='400' y='200' text-anchor='middle' fill='%23654321' font-size='24' font-family='Arial'>タクラマカン砂漠の無限の地平線</text></svg>" alt="タクラマカン砂漠の景観" class="desert-landscape">
+
+        <div class="route-details">
+            <h3>🗺️ 探検ルート詳細</h3>
+            <div class="achievement-box">
+                <h3>2004年完全縦断成功</h3>
+                <p><strong>開始地点:</strong> 東端油田基地（73日間の行程開始）</p>
+                <p><strong>直線距離:</strong> 約600km</p>
+                <p><strong>実移動距離:</strong> 1,816km</p>
+                <p><strong>特記事項:</strong> 停滞・休息・デポ等により実際の砂漠移動は56日間</p>
+                <p><strong>気象条件:</strong> 冬季のタクラマカンは氷点下20度を超える極寒、砂山は壁のように高く100mを超える難所を徒歩で踏破</p>
+            </div>
+        </div>
+
+        <div class="partner-info">
+            <h3>🤝 探検協力機関</h3>
+            <p><strong>中国側総責任者:</strong> CYTS総経理 鄭穂（ていほ）氏</p>
+            <p><strong>中国側部長:</strong> CYTS部長 王星（わんしん）氏</p>
+            <p><strong>計画立案:</strong> 上記3名で全計画を立案・実行</p>
+            <p><strong>安全対策:</strong> 砂漠移動時の安全確保に万全の準備を実施</p>
+        </div>
+
+        <div class="commemoration">
+            <h2>🎖️ 国際的評価と記念</h2>
+            <div class="achievement-box">
+                <h3>英国王室からの祝電</h3>
+                <p>今世紀初のタクラマカン砂漠横断探検にエリザベス女王2世が強い関心を示し、各方面に働きかけを行った。探検成功後、エリザベス女王2世はロンドンからウルムチに祝電を送信。</p>
+            </div>
+            <div class="achievement-box">
+                <h3>中国政府記念切手発行</h3>
+                <p>中国政府はこの歴史的快挙を記念して記念切手を発行。</p>
+            </div>
+            <div class="respect-message">
+                この探検は、1980年に失踪した彭佳木（ほうかぼく）研究員への深い敬意から始まった使命でした。<br>
+                未知のタクラマカン砂漠北緯39度線の横断に挑んだ、真の冒険家の勇気をここに讃えます。
+            </div>
+        </div>
+    </div>
+</body>
+</html>
